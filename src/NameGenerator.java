@@ -1,7 +1,8 @@
 
 public class NameGenerator {
 	private static String[] syllable = {"moo", "lan", "chi", "ser", 
-			"fay", "tah", "ish", "jo", "ami", "rissa"};
+			"fay", "tah", "ish", "jo", "ami", "rissa", "mi", "no",
+			"cho", "lo", "ri", "ah"};
 	NameGenerator(){		
 	}
 	private static int generateRandomNum(int min, int max){

@@ -42,9 +42,8 @@ public abstract class Creature {
 		
 		return result;
 	}
-	public static String generateName(){
-		String result = NameGenerator.generateName(); 
-		return result;
+	public String generateName(){
+		return NameGenerator.generateName();
 	}
 	public String getSex(){
 		String result;

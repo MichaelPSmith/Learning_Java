@@ -21,7 +21,6 @@ public class World {
 				worldMap[j][i] = false;
 			}
 		}
-		System.out.println("created base map");
 		GenerateWorld();
 	}
 	
@@ -240,7 +239,6 @@ public class World {
 					attachmentCount++;
 				}			
 			}
-			System.out.println("attachment count = " + attachmentCount);
 			if(!invalidRoom && attachmentCount < 3 && attachmentCount > 0){
 				worldMap[x][y] = true;
 				worldMap[x+1][y] = true;

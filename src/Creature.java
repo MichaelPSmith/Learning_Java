@@ -36,6 +36,16 @@ public abstract class Creature {
 			}
 		}
 	}
+	public static float generateRandomNum(int min, int max){
+		
+		float result = (float) ((Math.random() * (max - min) + min));
+		
+		return result;
+	}
+	public static String generateName(){
+		String result = NameGenerator.generateName(); 
+		return result;
+	}
 	public String getSex(){
 		String result;
 		if(sex){

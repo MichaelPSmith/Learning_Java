@@ -8,10 +8,10 @@ public class Game {
 	private static int denizens = (int)((Math.random()*9)+1);
 	public static Creature[] woldInhabitants = new Creature[denizens];
 	public static void main(String[] args) {
-		for(int i = 0; i < denizens; i++){
-			woldInhabitants[i] = new Human();
-		}
-		World current = new World(50,50);
+		World current = new World(40,15);
 		System.out.println(current.displayMap());
+		for(int i = 0; i < denizens; i++){
+			woldInhabitants[i] = new Human(current.getWorldMap());
+		}
 	}
 }

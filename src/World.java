@@ -5,13 +5,6 @@ public class World {
 	private boolean[][] worldMap;
 	private int features = 0;
 	
-	private void setWidth(int x){
-		this.width = x;
-	}
-	private void setHight(int y){
-		this.height = y;
-	}	
-	
 	//World constructor. Create a 2D map of false's given x & y dimensions
 	World(int x, int y){
 		this.setWidth(x);
@@ -25,6 +18,24 @@ public class World {
 		GenerateWorld();
 	}
 	
+	// get world map. useful for AI
+	public boolean[][] getWorldMap()
+	{
+		return this.worldMap;
+	}
+	private void setWidth(int x){
+		this.width = x;
+	}
+	public int getWidth(){
+		return this.width;
+	}
+	public int getHeight(){
+		return this.height;
+	}
+	private void setHight(int y){
+		this.height = y;
+	}	
+		
 	private void GenerateWorld(){
 		//Generate central chamber in the world. 3x3 room.		 
 		generateFirstRoom(width/2, height/2);
@@ -42,6 +53,7 @@ public class World {
 			}
 			attempts++;
 		}
+		
 	}
 	private void generateFirstRoom(int x, int y){
 		boolean invalidRoom = false;
@@ -75,6 +87,10 @@ public class World {
 			worldMap[x-1][y-1] = true;
 			this.features++;
 		}
+	}
+	
+	private void generateExit(){
+		
 	}
 	
 	private void generateRoom(int x, int y){

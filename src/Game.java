@@ -11,7 +11,7 @@ public class Game {
 		for(int i = 0; i < denizens; i++){
 			woldInhabitants[i] = new Human();
 		}
-		World current = new World(20,20);
+		World current = new World(50,50);
 		System.out.println(current.displayMap());
 	}
 }

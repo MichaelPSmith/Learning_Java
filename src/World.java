@@ -1,6 +1,7 @@
 public class World {
 	private int width;
 	private int height;
+	private int attempts = 0;
 	private boolean[][] worldMap;
 	private int features = 0;
 	
@@ -26,7 +27,6 @@ public class World {
 	
 	private void GenerateWorld(){
 		//Generate central chamber in the world. 3x3 room.		 
-		int attempts = 0;
 		generateFirstRoom(width/2, height/2);
 		while(this.features <= (this.width + this.height)
 				&& attempts <  (this.width * this.height)){
@@ -151,6 +151,7 @@ public class World {
 			worldMap[x-1][y+1] = true;
 			worldMap[x-1][y-1] = true;
 			this.features++;
+			this.attempts = 0;
 		}
 	}
 	private void generateCorridor(int x, int y){
@@ -199,7 +200,7 @@ public class World {
 				worldMap[x][y] = true;
 				worldMap[x][y+1] = true;
 				worldMap[x][y-1] = true;
-				this.features++;
+				this.attempts = 0;
 			}
 		}
 		else{
@@ -243,7 +244,7 @@ public class World {
 				worldMap[x][y] = true;
 				worldMap[x+1][y] = true;
 				worldMap[x-1][y] = true;
-				this.features++;
+				this.attempts = 0;
 			}
 		}
 	}

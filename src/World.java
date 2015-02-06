@@ -270,13 +270,23 @@ public class World {
 		for(int i = 0; i <= (this.height-1); i++){
 			for(int j = 0; j <= (this.width-1); j++){
 				if(worldMap[j][i] == true){
-					map += "_"; 
+					map += " "; 
 				}
 				else{
-					map += "#";
+					map += "\u2588";
 				}
 			}
 			map += "\n";			
+		}
+		return map;
+	}
+	public String transferMap(int x, int y){
+		String map;
+		if(worldMap[x][y] == true){
+			map = " "; 
+		}
+		else{
+			map = "\u2588";
 		}
 		return map;
 	}

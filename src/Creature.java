@@ -57,13 +57,17 @@ public abstract class Creature {
 		return result;
 	}
 	public void setRandomLocation(boolean[][] worldMap){
-		int tempX = (int) generateRandomNum(1, worldMap.length-1);
-		int tempY = (int) generateRandomNum(1, worldMap[0].length-1);
-		if (worldMap[tempX][tempY] = true)
-		{
-			this.setxCoord(tempX);
-			this.setyCoord(tempY);
-		}
+	    boolean test = false;
+		do{
+			int tempX = (int) generateRandomNum(1, worldMap.length-1);
+			int tempY = (int) generateRandomNum(1, worldMap[0].length-1);
+			if (worldMap[tempX][tempY] == true)
+			{
+				this.setxCoord(tempX);
+				this.setyCoord(tempY);
+				test = true;
+			}
+		}while(test == false);
 	}
 	public boolean isInteligent() {
 		return inteligent;

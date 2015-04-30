@@ -1,7 +1,7 @@
 import java.awt.EventQueue;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JSlider;
@@ -19,6 +19,7 @@ public class dungeon_generater_gui {
 	private JTextArea MapDisplay;
 	private Game main;
 	public JButton btnGenerate;
+	private Font mapFont = new Font("Rage Italic", Font.TRUETYPE_FONT, 12);
 
 	public JSlider getWorldWidthSlider() {
 		return WorldWidthSlider;
@@ -99,10 +100,14 @@ public class dungeon_generater_gui {
 		
 		WorldHeightSlider = new JSlider();
 		WorldHeightSlider.setBounds(12, 32, 112, 16);
+		WorldHeightSlider.setMinimum(10);
+		WorldHeightSlider.setMaximum(100);
 		frame.getContentPane().add(WorldHeightSlider);
 		
 		WorldWidthSlider = new JSlider();
 		WorldWidthSlider.setBounds(12, 78, 112, 16);
+		WorldWidthSlider.setMinimum(10);
+		WorldWidthSlider.setMaximum(100);
 		frame.getContentPane().add(WorldWidthSlider);
 		
 		btnGenerate = new JButton("Generate!");
@@ -126,6 +131,7 @@ public class dungeon_generater_gui {
 				main = new Game(WorldWidthSlider.getValue(), 
 						WorldHeightSlider.getValue(), CreatureSlider.getValue());
 	            MapDisplay.setText(main.displayMap());
+	            MapDisplay.setFont(mapFont);
 	            }
 		});
 	}
